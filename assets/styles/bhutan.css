@@ -1,1 +1,251 @@
-/* first commit */
+body {
+  background: url('assets/mountain-blur.jpg') no-repeat center/cover fixed;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #3a403d;
+  opacity: 90%;
+}
+
+.bhutan-main {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: #f8f9f5;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background: url('assets/banner.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;  
+    opacity: 85%;
+
+  
+}
+
+.citation, 
+.citation2 {
+  text-align: right;
+}
+
+
+
+.intro article {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  animation: fadeUp 1.2s ease-out forwards;
+  animation-delay: 0.8s;
+}
+
+.intro article > div {
+  flex: 1 1 320px;
+}
+
+.intro ul {
+  margin-top: 1.2rem;
+  padding-left: 1.5rem;
+  list-style-type: "☸️ ";
+  line-height: 1.8;
+}
+
+.geo {
+  max-width: 480px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+.geo:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+
+
+.data-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.table-section,
+.rituals {
+  flex: 1 1 45%;
+  min-width: 300px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+  .data-wrapper {
+    flex-direction: column;
+  }
+
+  .table-section,
+  .rituals {
+    flex: 1 1 100%;
+  }
+}
+
+
+.table-section,
+.rituals {
+  flex: 1 1 300px;
+}
+
+/* Tu peux réutiliser ton effet glass ici */
+.table-rituals .table-section,
+.table-rituals .rituals {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.table-section th,
+.table-section td {
+  padding: 1rem;
+  border: 1px solid #d1d8ce;
+  text-align: left;
+}
+
+.table-section th {
+  background: #ffffff5e;
+  color: #403a3a;
+}
+
+.table-section tbody tr:hover {
+  background: #f0f4ee;
+  transform: scale(1.005);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.rituals ol {
+  padding-left: 1.8rem;
+  line-height: 2;
+  color: #4a524b;
+}
+
+.wind-text {
+  animation: windBreath 20s ease-in-out infinite;
+  display: inline-block;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .bhutan-main {
+    padding: 1.5rem;
+  }
+
+  .table-section th,
+  .table-section td {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .geo {
+    max-width: 100%;
+  }
+}
+
+.gallery-carousel {
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  transition: transform 1s ease;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px; /* même hauteur pour tous */
+  object-fit: cover;
+}
+
+
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.nav label {
+  width: 14px;
+  height: 14px;
+  background: #aaa;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#slide1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+  transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+  transform: translateX(-200%);
+}
+
+#slide1:checked ~ .nav label[for="slide1"],
+#slide2:checked ~ .nav label[for="slide2"],
+#slide3:checked ~ .nav label[for="slide3"] {
+  background: #ffffff;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+
