@@ -1,1 +1,837 @@
-/* first commit */
+/* ===== BRAZIL.CSS - Styles spécifiques au Brésil ===== */
+
+/* Variables pour les couleurs du drapeau brésilien */
+:root {
+    --brazil-green: #009739;
+    --brazil-yellow: #FEDD00;
+    --brazil-blue: #012169;
+    --brazil-light-green: #00B04F;
+    --brazil-dark-green: #006622;
+    --brazil-light-yellow: #FFEB3B;
+    --brazil-gradient: linear-gradient(135deg, var(--brazil-green), var(--brazil-yellow), var(--brazil-blue));
+}
+
+/* Import des polices */
+@import url('https://fonts.googleapis.com/css2?family=Bubbler+One&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Styles principaux */
+.brazil-main {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brazil-gradient);
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="wave" x="0" y="0" width="100" height="20" patternUnits="userSpaceOnUse"><path d="M0,10 Q25,0 50,10 T100,10 V20 H0 Z" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23wave)"/></svg>') repeat;
+    animation: wave-move 20s linear infinite;
+}
+
+@keyframes wave-move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100px); }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.country-title {
+    font-family: 'Bubbler One', sans-serif;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    animation: title-pulse 3s ease-in-out infinite;
+}
+
+@keyframes title-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    animation: subtitle-fade 2s ease-in-out;
+}
+
+@keyframes subtitle-fade {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Animation du drapeau */
+.flag-animation {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.flag-stripe {
+    width: 60px;
+    height: 10px;
+    border-radius: 5px;
+    animation: flag-wave 2s ease-in-out infinite;
+}
+
+.flag-stripe.green { 
+    background: var(--brazil-green);
+    animation-delay: 0s;
+}
+
+.flag-stripe.yellow { 
+    background: var(--brazil-yellow);
+    animation-delay: 0.2s;
+}
+
+.flag-stripe.blue { 
+    background: var(--brazil-blue);
+    animation-delay: 0.4s;
+}
+
+@keyframes flag-wave {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.5); }
+}
+
+/* ===== SECTIONS COMMUNES ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+h2 {
+    font-family: 'Bubbler One', sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--brazil-green);
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--brazil-yellow);
+    border-radius: 2px;
+}
+
+/* ===== SECTION INTRODUCTION ===== */
+.intro-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.intro-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.intro-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--brazil-green);
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== DESTINATIONS ===== */
+.destinations-section {
+    background: white;
+}
+
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--brazil-green), transparent);
+    opacity: 0.3;
+}
+
+.card-image.rio {
+    background-image: linear-gradient(135deg, var(--brazil-green), var(--brazil-yellow));
+}
+
+.card-image.amazon {
+    background-image: linear-gradient(135deg, var(--brazil-dark-green), var(--brazil-light-green));
+}
+
+.card-image.salvador {
+    background-image: linear-gradient(135deg, var(--brazil-yellow), var(--brazil-blue));
+}
+
+.card-image.iguazu {
+    background-image: linear-gradient(135deg, var(--brazil-blue), var(--brazil-green));
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-content h3 {
+    font-family: 'Bubbler One', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--brazil-blue);
+}
+
+.card-content p {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.highlights {
+    list-style: none;
+    padding: 0;
+}
+
+.highlights li {
+    padding: 0.5rem 0;
+    border-left: 3px solid var(--brazil-yellow);
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.highlights li:hover {
+    border-left-color: var(--brazil-green);
+    transform: translateX(5px);
+}
+
+/* ===== CULTURE SECTION ===== */
+.culture-section {
+    background: var(--brazil-gradient);
+    color: white;
+}
+
+.culture-section h2 {
+    color: white;
+}
+
+.culture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.culture-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: rgba(255,255,255,0.2);
+}
+
+.culture-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: icon-bounce 2s ease-in-out infinite;
+}
+
+@keyframes icon-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.culture-item h3 {
+    font-family: 'Bubbler One', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== TIMELINE ===== */
+.planning-section {
+    background: #f8f9fa;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--brazil-yellow);
+    transform: translateX(-50%);
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: var(--brazil-green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transform: translateX(-50%);
+    z-index: 2;
+    font-family: 'Bubbler One', sans-serif;
+}
+
+.timeline-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-left: 60px;
+    position: relative;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    margin-left: 0;
+    margin-right: 60px;
+}
+
+.timeline-content h3 {
+    font-family: 'Bubbler One', sans-serif;
+    color: var(--brazil-blue);
+    margin-bottom: 1rem;
+}
+
+/* ===== TABLEAU ===== */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.info-table th,
+.info-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.info-table th {
+    background: var(--brazil-green);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-table tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.info-table tr:hover {
+    background: rgba(0, 151, 57, 0.1);
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+/* ===== BUDGET INFO ===== */
+.budget-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.budget-item {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--brazil-light-green), var(--brazil-green));
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+.budget-item:hover {
+    transform: scale(1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.budget-item h4 {
+    font-family: 'Bubbler One', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* ===== CONSEILS ===== */
+.conseils-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.conseil-item {
+    padding: 2rem;
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    border-radius: 15px;
+    border-left: 5px solid var(--brazil-yellow);
+    transition: all 0.3s ease;
+}
+
+.conseil-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    border-left-color: var(--brazil-green);
+}
+
+.conseil-item h4 {
+    font-family: 'Bubbler One', sans-serif;
+    color: var(--brazil-blue);
+    margin-bottom: 1rem;
+}
+
+/* ===== FORMULAIRE DE CONTACT ===== */
+.contact-section {
+    background: var(--brazil-gradient);
+    color: white;
+}
+
+.contact-section h2 {
+    color: white;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.9);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+.submit-btn {
+    background: var(--brazil-yellow);
+    color: var(--brazil-blue);
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--brazil-green);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.submit-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.submit-btn:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* ===== ANIMATIONS D'APPARITION (CSS ONLY) ===== */
+.destination-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    animation: card-appear 0.8s ease forwards;
+}
+
+.destination-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.destination-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.destination-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.destination-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes card-appear {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.culture-item {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: culture-appear 0.8s ease forwards;
+}
+
+.culture-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.culture-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.culture-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.culture-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes culture-appear {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.timeline-item {
+    position: relative;
+    margin: 3rem 0;
+    animation: timeline-appear 0.8s ease forwards;
+}
+
+.timeline-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+@keyframes timeline-appear {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.timeline-item:nth-child(even) {
+    animation-name: timeline-appear-right;
+}
+
+@keyframes timeline-appear-right {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .country-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .intro-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .destinations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .culture-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .timeline::before {
+        left: 20px;
+    }
+    
+    .timeline-marker {
+        left: 20px;
+    }
+    
+    .timeline-content {
+        margin-left: 60px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 60px;
+        margin-right: 0;
+    }
+    
+    .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 200px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .budget-info,
+    .conseils-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .country-title {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .stat-item {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+    }
+    
+    .culture-item {
+        padding: 1.5rem;
+    }
+    
+    .timeline-content {
+        padding: 1.5rem;
+    }
+    
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+/* ===== EFFETS DE SURVOL SUPPLÉMENTAIRES ===== */
+.destination-card:hover .card-image::before {
+    opacity: 0.1;
+}
+
+.destination-card:hover .card-content h3 {
+    color: var(--brazil-green);
+    transform: translateX(10px);
+}
+
+/* ===== ANIMATIONS CONTINUES ===== */
+@keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.culture-icon {
+    animation: floating 3s ease-in-out infinite;
+}
+
+.culture-item:nth-child(2) .culture-icon {
+    animation-delay: 0.5s;
+}
+
+.culture-item:nth-child(3) .culture-icon {
+    animation-delay: 1s;
+}
+
+.culture-item:nth-child(4) .culture-icon {
+    animation-delay: 1.5s;
+}
+
+/* ===== SCROLL SMOOTH ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== SÉLECTION DE TEXTE ===== */
+::selection {
+    background: var(--brazil-yellow);
+    color: var(--brazil-blue);
+}
+
+/* ===== FOCUS STATES ===== */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid var(--brazil-yellow);
+    outline-offset: 2px;
+}
