@@ -1,5 +1,5 @@
 body {
-  background: url('assets/mountain-blur.jpg') no-repeat center/cover fixed;
+  background: url('../img/mountain-blur.jpg') no-repeat center/cover fixed;
   margin: 0;
   font-family: 'Inter', sans-serif;
   color: #3a403d;
@@ -19,7 +19,7 @@ body {
   position: relative;
   width: 100%;
   height: 70vh;
-  background: url('assets/banner.jpg') center/cover no-repeat;
+  background: url('../img/banner.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,11 +77,11 @@ body {
 
 .data-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch; /* ← alignement vertical identique */
   gap: 2rem;
   flex-wrap: wrap;
 }
+
 
 .table-section,
 .rituals {
@@ -148,9 +148,6 @@ body {
   display: inline-block;
 }
 
-
-
-
 @media (max-width: 600px) {
   .bhutan-main {
     padding: 1.5rem;
@@ -196,8 +193,6 @@ body {
   height: 400px; /* même hauteur pour tous */
   object-fit: cover;
 }
-
-
 
 .nav {
   display: flex;
@@ -247,5 +242,3 @@ figcaption {
   margin-top: 0.5rem;
   font-style: italic;
 }
-
-
