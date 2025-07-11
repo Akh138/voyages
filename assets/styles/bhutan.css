@@ -25,7 +25,7 @@ body {
   justify-content: center;
   overflow: hidden;
   border-radius: 10px;  
-    opacity: 85%;
+  opacity: 85%;
 
   
 }
@@ -39,15 +39,16 @@ body {
 
 .intro article {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center; /* <-- vertical alignment */
+  justify-content: space-between;
   gap: 2.5rem;
-  background: rgba(255, 255, 255, 0.9);
+  flex-wrap: wrap;
   padding: 2rem;
   border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(8px);
-  animation: fadeUp 1.2s ease-out forwards;
-  animation-delay: 0.8s;
 }
+
 
 .intro article > div {
   flex: 1 1 320px;
@@ -168,13 +169,16 @@ body {
   padding: 2rem;
   margin-top: 2rem;
   text-align: center;
+  
 }
 
 .carousel {
   position: relative;
-  max-width: 100%;
+  max-width: 200%;
   margin: auto;
   overflow: hidden;
+  border-radius: 500px;
+
 }
 
 .slides {
